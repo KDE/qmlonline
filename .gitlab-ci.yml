@@ -2,5 +2,6 @@ image: docker:latest
 
 build:
   script:
+    - ls
     - deploy.sh
     - ls build
