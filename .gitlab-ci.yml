@@ -1,5 +1,8 @@
 image: docker:latest
 
+variables:
+  DOCKER_HOST: tcp://docker:2375
+
 build:
   script:
     - ls
