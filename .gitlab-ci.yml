@@ -1,14 +1,7 @@
-default:
-    image:
-        name: madmanfred/qt-webassembly
-        entrypoint: ["/bin/bash"]
-
 build:
     before_script:
-        - echo $PATH
         - ls
     script:
-        - qmake CONFIG+=release -o build
-        - make -C build
+        - ./deploy.sh
     after_script:
         - ls build
