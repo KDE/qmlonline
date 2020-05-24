@@ -1,8 +1,9 @@
-image: madmanfred/qt-webassembly
-
-build:
-  script:
-    - mkdir build
-    - qmake CONFIG+=release -o build
-    - make -C build
-    - ls build
+default:
+  image:
+    name: madmanfred/qt-webassembly
+    entrypoint: ["/bin/bash"]
+    script:
+      - mkdir build
+      - qmake CONFIG+=release -o build
+      - make -C build
+      - ls build
