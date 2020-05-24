@@ -11,8 +11,9 @@ before_script:
 
 build:
     before_script:
+        - ls -la *
+        - ls -la /
         - docker info
-        - ls
     script:
         - ./deploy.sh
     after_script:
