@@ -1,10 +1,10 @@
-image: docker:19.03.8
+image: docker
 
 variables:
     DOCKER_TLS_CERTDIR: "/certs"
 
 services:
-    - docker:19.03.8-dind
+    - docker:dind
 
 before_script:
     - docker info
