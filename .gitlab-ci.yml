@@ -4,8 +4,10 @@ default:
         entrypoint: ["/bin/bash"]
 
 build:
-    script:
+    before_script:
         - mkdir build
+    script:
         - qmake CONFIG+=release -o build
         - make -C build
+    after_script:
         - ls build
