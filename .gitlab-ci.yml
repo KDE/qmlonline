@@ -11,7 +11,8 @@ before_script:
 
 build:
     before_script:
-        - apt install docker
+        - docker info
+        - ls
     script:
         - ./deploy.sh
     after_script:
