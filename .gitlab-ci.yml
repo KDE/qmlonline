@@ -1,10 +1,8 @@
-image: docker:latest
-
-variables:
-  DOCKER_HOST: tcp://localhost:2375
+image: madmanfred/qt-webassembly
 
 build:
   script:
-    - ls
-    - ./deploy.sh
+    - mkdir build
+    - qmake CONFIG+=release -o build
+    - make -C build
     - ls build
