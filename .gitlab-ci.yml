@@ -1,10 +1,12 @@
 default:
     image:
         name: madmanfred/qt-webassembly
+        entrypoint: ["/bin/bash"]
 
 build:
     before_script:
-        - mkdir build
+        - echo $PATH
+        - ls
     script:
         - qmake CONFIG+=release -o build
         - make -C build
