@@ -23,6 +23,7 @@ Kirigami.ApplicationWindow {
     globalDrawer: Kirigami.GlobalDrawer {
         title: "Hello App"
         titleIcon: "applications-graphics"
+        clip: true
 
         actions: [
             Kirigami.Action {
