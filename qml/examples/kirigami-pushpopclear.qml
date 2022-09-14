@@ -5,6 +5,7 @@
  */
 
 import QtQuick 2.1
+import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.4 as Kirigami
 
 Kirigami.ApplicationWindow {
@@ -42,7 +43,7 @@ Kirigami.ApplicationWindow {
             title: "First Page"
             Rectangle {
                 anchors.fill: parent
-                Kirigami.Label {
+                QQC2.Label {
                     text: "First Page"
                 }
             }
@@ -56,7 +57,7 @@ Kirigami.ApplicationWindow {
             Rectangle {
                 color: "red"
                 anchors.fill: parent
-                Kirigami.Label {
+                QQC2.Label {
                     text: "Second Page"
                 }
             }
