@@ -6,5 +6,8 @@ Play online with QML, thanks to WebAssembly!
 
 Website: [https://qmlonline.kde.org/](https://qmlonline.kde.org/)
 
-## How to build:
+## How to run locally:
+
 1. `./deploy.sh`
+2. [Install emscripten](https://emscripten.org/docs/getting_started/downloads.html#installation-instructions-using-the-emsdk-recommended)
+3. `emrun build/index.html`
