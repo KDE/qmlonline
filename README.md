@@ -8,6 +8,9 @@ Website: [https://qmlonline.kde.org/](https://qmlonline.kde.org/)
 
 ## How to run locally:
 
-1. `./deploy.sh`
-2. [Install emscripten](https://emscripten.org/docs/getting_started/downloads.html#installation-instructions-using-the-emsdk-recommended)
-3. `emrun build/index.html`
+1. Install Docker
+2. `./deploy.sh`
+3. [Install emscripten](https://emscripten.org/docs/getting_started/downloads.html#installation-instructions-using-the-emsdk-recommended)
+4. `emrun build/index.html`
+
+QMLOnline runs fine with Podman as well: replace `docker` with `podman` and `-u $(id -u):$(id -g)` with `--userns keep-id` in the `deploy.sh` script.
