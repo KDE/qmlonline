@@ -1,0 +1,24 @@
+include:
+  - project: sysadmin/ci-utilities
+    file:
+      - /gitlab-templates/blocks/workflow.yml
+
+quasar_website:
+  image: invent-registry.kde.org/sysadmin/ci-images/qt-webassembly-builder:latest
+  tags:
+    - Linux
+  stage: build
+  variables:
+    LANG: en_US.UTF-8
+  before_script:
+    - git config --global --add safe.directory $CI_PROJECT_DIR
+    - git clone https://invent.kde.org/sysadmin/ci-utilities.git
+    - git clone https://invent.kde.org/sysadmin/ci-notary-service.git
+  script:
+    - qmake -o build/ CONFIG+=release
+    - make -C build/
+    - rm -rf build/{moc,objects,*.cpp}
+    - python3 -u ci-notary-service/publishwebsite.py --config ci-utilities/signing/publishwebsite.ini build/
+  artifacts:
+    paths:
+      - build/
