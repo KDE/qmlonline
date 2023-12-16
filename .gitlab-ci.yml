@@ -15,9 +15,9 @@ quasar_website:
     - git clone https://invent.kde.org/sysadmin/ci-utilities.git
     - git clone https://invent.kde.org/sysadmin/ci-notary-service.git
   script:
-    - qmake -o build/ CONFIG+=release
-    - make -C build/
-    - python3 -u ci-notary-service/publishwebsite.py --config ci-utilities/signing/publishwebsite.ini build/
+    - /qt-webassembly/entrypoint qmake -o build/ CONFIG+=release
+    - /qt-webassembly/entrypoint make -C build/
+#    - python3 -u ci-notary-service/publishwebsite.py --config ci-utilities/signing/publishwebsite.ini build/
   artifacts:
     paths:
       - build/
