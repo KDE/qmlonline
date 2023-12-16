@@ -3,7 +3,7 @@ include:
     file:
       - /gitlab-templates/blocks/workflow.yml
 
-quasar_website:
+qt_wasm_website:
   image: invent-registry.kde.org/sysadmin/ci-images/qt-webassembly-builder:latest
   tags:
     - Linux
