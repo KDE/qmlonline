@@ -17,7 +17,6 @@ quasar_website:
   script:
     - qmake -o build/ CONFIG+=release
     - make -C build/
-    - rm -rf build/{moc,objects,*.cpp}
     - python3 -u ci-notary-service/publishwebsite.py --config ci-utilities/signing/publishwebsite.ini build/
   artifacts:
     paths:
